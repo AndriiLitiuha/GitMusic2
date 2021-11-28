@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">music2</string>
+    <string name="add">Add</string>
+    <string name="todo">TODO</string>
+    <string name="Plus">+</string>
+    <string name="Minus">-</string>
+    <string name="dollar">$</string>
+    <string name="your_name">Your name</string>
+    <string name="_00">0</string>
+    <string name="select_item">Select Item</string>
+    <string name="sale_25">Sale -25%</string>
+    <string name="_0">0</string>
+    <string name="order_price">Order Price</string>
+    <string name="quantity">Quantity</string>
+
+</resources>
