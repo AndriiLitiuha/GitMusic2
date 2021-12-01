@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     void createMap(){
         spinnerNamePrice = new HashMap();
-        spinnerNamePrice.put("guitar", 1300.0);
+        spinnerNamePrice.put("guitar", 1200.0);
         spinnerNamePrice.put("drums", 1400.0);
         spinnerNamePrice.put("piano", 1700.0);
     }
