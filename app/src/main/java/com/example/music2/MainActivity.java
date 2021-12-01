@@ -14,19 +14,20 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     int quantity = 0;
-    Spinner spinner;
-
-    ArrayList <String> spinnerAL = new ArrayList();
-
-    ArrayAdapter spinnerAdapter;
-    HashMap  spinnerNamePrice;
     String  selectedSpinner;
     double price;
+
+    Spinner spinner;
+    ArrayList <String> spinnerAL = new ArrayList();
+    ArrayAdapter spinnerAdapter;
+    HashMap  spinnerNamePrice;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         createList();
         createMap();
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,spinnerAL );
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
+
     }
 
     void createList(){
@@ -70,11 +72,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         selectedSpinner = spinner.getSelectedItem().toString();
-        //try {
-            price = (double) spinnerNamePrice.get(selectedSpinner);
-        //} catch (Exception e) {
-        //    e.printStackTrace();
-        //}
+        price = (double) spinnerNamePrice.get(selectedSpinner);
         TextView PriceCurrent = findViewById(R.id.PriceCurrent);
         PriceCurrent.setText(""+ quantity * price);
     }
