@@ -21,30 +21,31 @@
         android:inputType="textPersonName"
         android:minHeight="48dp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="160dp"
+            android:layout_width="401dp"
+            android:layout_height="129dp"
             android:contentDescription="@string/todo"
-
-
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/clouds"
+            tools:src="@drawable/clouds"
             tools:srcCompat="@drawable/clouds" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="109dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginBottom="56dp"
 
             android:fontFamily="@font/alfa_slab_one"
             android:rotation="330"
@@ -53,10 +54,11 @@
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TextContrastCheck" />
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -83,12 +85,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/mars"
+        android:contentDescription="@string/todo"
 
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/clouds"
+        tools:ignore="ImageContrastCheck" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -96,13 +99,14 @@
 
         <TextView
             android:id="@+id/QuantityCurrent"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/QuantityTV"
-            android:layout_marginStart="300dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="1dp"
-            android:layout_marginEnd="10dp"
 
+            android:layout_toEndOf="@id/MinusB"
             android:text="@string/_0"
             android:textColor="@android:color/black"
             android:textSize="25sp"
@@ -114,11 +118,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/OrderPriceTV"
             android:layout_marginStart="50dp"
-            android:layout_marginEnd="10dp"
             android:layout_marginTop="1dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/_0"
-            android:textSize="25sp"
             android:textColor="@android:color/black"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
@@ -143,36 +147,42 @@
             android:textStyle="bold"
             android:textSize="15sp"
 
-
             />
 
         <Button
             android:id="@+id/MinusB"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_below="@id/QuantityTV"
-            android:layout_marginStart="160dp"
-            android:layout_toEndOf="@id/CurrencyPrice"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="210dp"
+            android:onClick="decreaseQuamtity"
+
             android:text="@string/Minus"
             android:textColor="#212121"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
+            tools:ignore="OnClick,TextContrastCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck,TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/PlusB"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_below="@id/QuantityTV"
-            android:layout_marginStart="250dp"
-            android:layout_toEndOf="@id/CurrencyPrice"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="305dp"
+
+
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="IncreaseQuantity"
             android:text="@string/Plus"
             android:textColor="#212121"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck,TouchTargetSizeCheck,UsingOnClickInXml" />
 
         <TextView
             android:id="@+id/QuantityTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="180dp"
+            android:layout_marginStart="140dp"
             android:layout_toEndOf="@id/OrderPriceTV"
             android:text="@string/quantity"
             android:textColor="@android:color/black"
